@@ -1,0 +1,55 @@
+Bug notes: 
+
+Original code: 
+
+File : Schemas.py
+
+pet = {
+    "type": "object",
+    "required": ["name", "type"],
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "integer"
+        },
+        "type": {
+            "type": "string",
+            "enum": ["cat", "dog", "fish"]
+        },
+        "status": {
+            "type": "string",
+            "enum": ["available", "sold", "pending"]
+        },
+    }
+}
+
+
+Fixed code : 
+File : Schemas.py
+
+Original Pet name of type was "integer". Pet name of type should "string" 
+
+pet = {
+    "type": "object",
+    "required": ["name", "type"],
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string",
+            "enum": ["cat", "dog", "fish"]
+        },
+        "status": {
+            "type": "string",
+            "enum": ["available", "sold", "pending"]
+        },
+    }
+}
+
+
