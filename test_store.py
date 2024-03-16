@@ -22,7 +22,7 @@ def unique_order_data():
     return {               
         "id": "eb91afe5-aa6f-41d2-ac07-2cc7ce9ad915", 
         "pet_id": 0, 
-        "status" : "Approved"
+        
          
     }
               
@@ -38,5 +38,3 @@ def test_patch_order_by_id(unique_order_data):
     assert response.status_code == 200
     
     assert response.json()["message"] == "Order and pet status updated successfully"   
-
-

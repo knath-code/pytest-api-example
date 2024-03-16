@@ -16,5 +16,10 @@ pet = {
             "type": "string",
             "enum": ["available", "sold", "pending"]
         },
+        "order":{
+            "type": "string",
+             "enum": ["id"]             
+        },
+
     }
 }
