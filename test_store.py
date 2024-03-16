@@ -19,10 +19,11 @@ TODO: Finish this test by...
 @pytest.fixture
 def unique_order_data():
     # You can create unique test data for each run here if needed
-    return {
-               
-        "id": "b9d7f3f0-a922-41a6-a9ec-29265cc725a4", 
-        "status": "placed"  
+    return {               
+        "id": "eb91afe5-aa6f-41d2-ac07-2cc7ce9ad915", 
+        "pet_id": 0, 
+        "status" : "Approved"
+         
     }
               
                 
@@ -30,14 +31,12 @@ def unique_order_data():
 
 def test_patch_order_by_id(unique_order_data):
     test_endpoint = f"/store/order/{unique_order_data['id']}"
-    new_status = "approved" 
+    new_status = "available" 
     
     response = api_helpers.patch_api_data(test_endpoint, data={"status": new_status})
    
     assert response.status_code == 200
     
-    assert response.json()["message"] == "Order and pet status updated successfully"
-
-   
+    assert response.json()["message"] == "Order and pet status updated successfully"   
 
 
