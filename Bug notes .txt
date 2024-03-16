@@ -30,6 +30,7 @@ Fixed code :
 File : Schemas.py
 
 Original Pet name of type was "integer". Pet name of type should "string" 
+and added new order schema
 
 pet = {
     "type": "object",
@@ -49,6 +50,11 @@ pet = {
             "type": "string",
             "enum": ["available", "sold", "pending"]
         },
+        "order":{
+            "type": "string",
+             "enum": ["id"]             
+        },
+
     }
 }
 
