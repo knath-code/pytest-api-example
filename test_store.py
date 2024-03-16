@@ -22,8 +22,7 @@ def unique_order_data():
     return {               
         "id": "eb91afe5-aa6f-41d2-ac07-2cc7ce9ad915", 
         "pet_id": 0, 
-        
-         
+        "status" : "pending"         
     }
               
                 
