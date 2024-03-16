@@ -35,12 +35,12 @@ def test_find_by_status_200(status):
     response = api_helpers.get_api_data(test_endpoint, params)
     assert response.status_code == 200
 
-    # Validate 'status' property in the response
+    
     pets = response.json()
     for pet in pets:
         assert pet["status"] == status
     
-     # Validate the schema for each object in the response
+     
     pets = response.json()  
     for pet in pets:
         validate(instance=pet, schema=schemas.pet)  
@@ -59,5 +59,5 @@ def test_get_by_id_404(pet_id):
 
     response = api_helpers.get_api_data(test_endpoint)
 
-    # Validate the response code
+    
     assert response.status_code == 404
