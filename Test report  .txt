@@ -1,0 +1,26 @@
+Test report : 
+
+test_pet.py::test_pet_schema  ---- PASSED                                                                                                                                                             
+test_pet.py::test_find_by_status_200[available]--- PASSED                                                                                                                                          
+test_pet.py::test_get_by_id_404[1111111] ---PASSED 
+
+                                                                                                                                               
+test_store.py::test_patch_order_by_id ---FAILED    
+
+Failed Code: 
+unique_order_data = {'order_id': '0771524a-56f9-415c-9bcc-328e7ca5f117', 'pet_id': 0, 'status': 'pending'}
+
+    def test_patch_order_by_id(unique_order_data):
+        url = f"http://127.0.0.1:5000/store/order/{unique_order_data['order_id']}"
+        headers = {"Content-Type": "application/json", "accept": "application/json"}
+
+        payload = {
+            "status": unique_order_data["status"],
+
+        }
+
+        response = requests.patch(url, json=payload, headers=headers)
+
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404]>.status_code                                                                                                                                               
