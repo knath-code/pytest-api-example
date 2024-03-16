@@ -27,13 +27,18 @@ def unique_order_data():
               
                 
            
-
 def test_patch_order_by_id(unique_order_data):
-    test_endpoint = f"/store/order/{unique_order_data['order_id']}"
-    new_status = "available" 
-    
-    response = api_helpers.patch_api_data(test_endpoint, data={"status": new_status})
+    url = f"http://127.0.0.1:5000/store/order/{unique_order_data['order_id']}"
+    headers = {"Content-Type": "application/json", "accept": "application/json"}   
+
+    payload = {
+        "status": unique_order_data["status"],
+        
+    }
+   
+    response = requests.patch(url, json=payload, headers=headers)
    
     assert response.status_code == 200
-    
-    assert response.json()["message"] == "Order and pet status updated successfully"   
+   
+    expected_message = "Order and pet status updated successfully"
+    assert response.json()["message"] == expected_message
