@@ -20,7 +20,7 @@ TODO: Finish this test by...
 def unique_order_data():
     # You can create unique test data for each run here if needed
     return {               
-        "id": "eb91afe5-aa6f-41d2-ac07-2cc7ce9ad915", 
+        "order_id": "0771524a-56f9-415c-9bcc-328e7ca5f117", 
         "pet_id": 0, 
         "status" : "pending"         
     }
@@ -29,7 +29,7 @@ def unique_order_data():
            
 
 def test_patch_order_by_id(unique_order_data):
-    test_endpoint = f"/store/order/{unique_order_data['id']}"
+    test_endpoint = f"/store/order/{unique_order_data['order_id']}"
     new_status = "available" 
     
     response = api_helpers.patch_api_data(test_endpoint, data={"status": new_status})
