@@ -16,7 +16,7 @@ def test_pet_schema():
 
     assert response.status_code == 200
 
-    # Validate the response schema against the defined schema in schemas.py
+   
     validate(instance=response.json(), schema=schemas.pet)
 
 
