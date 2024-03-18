@@ -7,6 +7,7 @@ test_pet.py::test_get_by_id_404[1111111] ---PASSED
                                                                                                                                                
 test_store.py::test_patch_order_by_id ---FAILED    
 
+
 Failed Code: 
 unique_order_data = {'order_id': '0771524a-56f9-415c-9bcc-328e7ca5f117', 'pet_id': 0, 'status': 'pending'}
 
@@ -22,5 +23,5 @@ unique_order_data = {'order_id': '0771524a-56f9-415c-9bcc-328e7ca5f117', 'pet_id
         response = requests.patch(url, json=payload, headers=headers)
 
 >       assert response.status_code == 200
-E       assert 404 == 200
-E        +  where 404 = <Response [404]>.status_code                                                                                                                                               
+        assert 404 == 200
+      +  where 404 = <Response [404]>.status_code                                                                                                                                               

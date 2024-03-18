@@ -12,10 +12,9 @@ The purpose of this test is to validate the response matches the expected schema
 def test_pet_schema():
     test_endpoint = "/pets/1"
 
-    response = api_helpers.get_api_data(test_endpoint)
-
+    response = api_helpers.get_api_data(test_endpoint)    
+    # validate the response 
     assert response.status_code == 200
-
    
     validate(instance=response.json(), schema=schemas.pet)
 
@@ -33,7 +32,9 @@ def test_find_by_status_200(status):
     params = { "status": status }
 
     response = api_helpers.get_api_data(test_endpoint, params)
-    assert response.status_code == 200
+
+    # Validate the 'status'
+    assert response.status_code == 200    
     
     pets = response.json()
     for pet in pets:
