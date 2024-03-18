@@ -1,3 +1,4 @@
+
 pet = {
     "type": "object",
     "required": ["name", "type"],
@@ -22,3 +23,5 @@ pet = {
 
     }
 }
+
+#  Name type changed from Integer to String , added new schemas order_id 
